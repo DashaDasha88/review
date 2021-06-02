@@ -47,6 +47,32 @@ const printTracks = function() {
     let tr = library.tracks[t];
     console.log(`${t}: ${tr.name} by ${tr.artist} (${tr.album})`);
   }
+};
+
+// printTracks();
+
+// prints a list of tracks for a given playlist, using the following format:
+// p02: Old Skool Tracks - 2 tracks
+// t01: Atomic Dog by George Clinton (Computer Games)
+// t03: Clear by Cybotron (Enter)
+
+const printPlaylist = function(playlistId) {
+  for (let p1 in library.playlists) {
+    let pl = library.playlists[p1];
+
+    if (pl.id === playlistId) {
+      console.log(`${pl.id}: ${pl.name} - ${pl.tracks.length} tracks`);
+    }
+
+    for (let p2 in library.tracks){
+      let t = library.tracks[p2];
+
+      if (pl.tracks.includes(t.id)) {
+        console.log(`${t.id}: ${t.name} by ${t.artist} (${t.album})`)
+      }
+    }
+    break;
+  }
 }
 
-printTracks();
+printPlaylist("p02");

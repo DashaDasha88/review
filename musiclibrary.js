@@ -25,6 +25,7 @@ const library = {
 };
 
 //Print the following:
+
 // p01: Hypnotic Music - 3 tracks
 // p02: Old Skool Tracks - 2 tracks
 
@@ -73,6 +74,9 @@ const printPlaylist = function(playlistId) {
     }
     break;
   }
-}
+};
 
-printPlaylist("p02");
+// printPlaylist("p02");
+
+const libraryCopy = {...library};
+console.log(libraryCopy);

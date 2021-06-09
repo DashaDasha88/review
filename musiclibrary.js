@@ -57,26 +57,27 @@ const printTracks = function() {
 // t01: Atomic Dog by George Clinton (Computer Games)
 // t03: Clear by Cybotron (Enter)
 
-const printPlaylist = function(playlistId) {
+const printPlaylist = function (playlistId) {
+
   for (let p1 in library.playlists) {
     let pl = library.playlists[p1];
 
     if (pl.id === playlistId) {
       console.log(`${pl.id}: ${pl.name} - ${pl.tracks.length} tracks`);
-    }
 
-    for (let p2 in library.tracks){
-      let t = library.tracks[p2];
+      for (let p2 in library.tracks) {
+        let tr = library.tracks[p2];
 
-      if (pl.tracks.includes(t.id)) {
-        console.log(`${t.id}: ${t.name} by ${t.artist} (${t.album})`)
+        if(pl.tracks.includes(tr.id)){
+          console.log(`${tr.id}: ${tr.name} by ${tr.artist} (${tr.album})`)
+        }
       }
     }
-    break;
   }
+
 };
 
-// printPlaylist("p02");
+printPlaylist("p02");
 
-const libraryCopy = {...library};
-console.log(libraryCopy);
+// const libraryCopy = {...library};
+// console.log(libraryCopy);

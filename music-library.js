@@ -81,7 +81,20 @@ printPlaylist("p01");
 
 // adds an existing track to an existing playlist
 const addTrackToPlaylist = function(trackId, playlistId) {
+  for (let p1 in library.playlists) {
+    let pl = library.playlists[p1];
+    if (pl.id === playlistId) {
+        //printPlaylist(pl.id);
 
+        //adds track to playlist if it's not there
+        if (!pl.tracks.includes(trackId)) {
+            pl.tracks.push(trackId);
+            //printPlaylist(pl.id);
+        }
+
+        break; // exist playlists loop if required playlist was found
+    }
+}
 }
 
 
